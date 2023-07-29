@@ -1,0 +1,26 @@
+.image {
+	max-width: 100%;
+	max-height: 500px;
+}
+a {
+	text-decoration: none;
+	font-family: "Quicksand";
+	font-weight: 500;
+	display: block;
+	color: rgb(0, 0, 0) !important;
+}  
+a:hover {
+	color: #920630;
+}
+.content {
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 5;
+	overflow: hidden;
+}
+.line {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    border: solid #1cc0d6 1px;
+}

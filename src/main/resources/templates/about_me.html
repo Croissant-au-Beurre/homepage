@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html xmlns:th="http://www.thymeleaf.org"> <!--<![endif]-->
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="description" content="Name of your web site">
+<meta name="author" content="Marketify">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+<title>About Me</title>
+	
+<link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700&display=swap" rel="stylesheet">
+
+<!-- STYLES -->
+<link rel="stylesheet" type="text/css" href="/css/plugins.css" />
+<link rel="stylesheet" type="text/css" href="/css/style.css" />
+<link rel="stylesheet" type="text/css" href="/css/about_me.css" />
+<!--[if lt IE 9]> <script type="text/javascript" src="js/modernizr.custom.js"></script> <![endif]-->
+<!-- /STYLES -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="/js/about_me/about_me.js"></script>
+<script src="https://kit.fontawesome.com/d9e1893de5.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+	
+<!-- WRAPPER ALL -->
+<div class="resumify_tm_all_wrap">
+	
+	<!-- MOBILE MENU -->
+	<div class="resumify_tm_mobile_header_wrap">
+		<div class="main_wrap">
+			<div class="resumify_tm_trigger">
+				<div class="hamburger hamburger--collapse-r">
+					<div class="hamburger-box">
+						<div class="hamburger-inner"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="resumify_tm_mobile_menu_wrap">
+   			<div class="mob_menu">
+				<ul>
+					<li><a href="about_me">About Me</a></li>
+					<li><a href="research">Research Interest</a></li>
+					<li><a href="publication">Publication</a></li>			
+					<li><a href="blog">My Blog</a></li>			
+					<li><a href="contact">Contact Me</a></li>
+					<li><a href="entrance">Back</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- /MOBILE MENU -->
+	
+	<div class="resumify_tm_submenu_box"></div>
+	<div class="resumify_tm_leftpart">
+		<div class="inner_wrap">
+			<div class="menu_list scrollable">
+				<ul>
+					<li><a href="about_me">About Me</a></li>
+					<li><a href="research">Research Interest</a></li>
+					<li><a href="publication">Publication</a></li>					
+					<li><a href="blog">My Blog</a></li>					
+					<li><a href="contact">Contact Me</a></li>
+				</ul>
+			</div>
+			<div class="bottom_parts">
+				<span class="wing"></span>
+				<div class="ddd">
+					<div class="author_image">
+						<div class="image_inner"></div>
+					</div>
+					<div class="details_wrap">
+						<div class="details_inner">
+							<h3 class="name">DAI WEI</h3>
+							<div class="short_info">
+								<a href="#">dai.w.aa@m.titech.ac.jp</a>
+								<p>080-3545-0037</p>
+							</div>
+							<div class="resumify_tm_button" data-position="center">
+								<a href="entrance">Back</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="fff"></div>
+			</div>
+		</div>
+	</div>
+	<div class="resumify_tm_rightpart">		
+		<div class="resumify_tm_rightpart_changable_section">
+			<div class="rightpart_inner">
+				<div class="container" style="max-width: 100%;">
+					<div class="home_hero">
+						<div class="home_content-left">
+							<div class="name_holder">
+								<h3>
+									<span class="animate">
+										<span>Hello Everyone!</span>
+									</span>
+									<span class="animate">
+										<span><span class="name">News</span><i id="openModal" th:if="${isAdmin}" class="fa-solid fa-hippo"></i></span>
+									</span>
+								</h3>
+							</div>
+							<div class="description" th:each="news : ${newsList}" th:classappend="${isAdmin} ? 'openModal' : ''">
+								<input type="hidden" class="seq" th:value="${news.seq}">
+								<span class="date" th:text="${news.formattedDate}"></span>
+								<div class="flex">
+									<p class="newsView break-word" th:text="${news.news}"></p>
+									<a class="ml10 flex align-item-center urlView" th:href="${news.url}" th:if="${news.url != null and news.url != ''}"><i class="fa-solid fa-up-right-from-square"></i></a>
+								</div>
+							</div>
+						</div>
+						<div class="home_content-right">
+								<div class="name_holder">
+									<h3>
+										<span class="animate font40">
+											<span>About <span class="name">Me</span></span>
+										</span>
+									</h3>
+								</div>
+							<div class="leftpart">
+								<div class="info_box_wrap">
+									<div class="title">
+										<span class="main">Born</span>
+									</div>
+									<div class="times_list">
+										<ul>
+											<li><p><span>1994/11</span>-Hubei China,</p></li>
+											<li><p>Lives and works in Tokyo</p></li>
+										</ul>
+									</div>
+								<div class="info_box_wrap mg20-0">
+									<div class="title">
+										<span class="main">EDUCATION</span>
+									</div>
+									<div class="times_list">
+										<span class="subtitle">Balchelor</span>
+										<ul>
+											<li><p><span>2012/09 - 2016/06</span>-Wuhan University,</p></li>
+											<li><p><span class="gary">Courses</span> Physics</p></li>
+										</ul>
+									</div>
+									<div class="times_list">
+										<span class="subtitle">Master</span>
+										<ul>
+											<li><p><span>2019/04 - 2021/03</span>-Tokyo Institute of Technology,</p></li>
+											<li><p><span class="gary">Courses</span> Physics</p></li>
+										</ul>
+									</div>
+									<div class="times_list">
+										<span class="subtitle">PhD</span>
+										<ul>
+											<li><p><span>2021/04 - Present</span>-Tokyo Institute of Technology,</p></li>
+											<li><p><span class="gary">Courses</span> Physics</p></li>
+										</ul>
+									</div>
+								</div>
+								<div class="info_box_wrap display-none mg20-0">
+									<div class="title">
+										<span class="main">WORK EXPERIENCE</span>
+										<span class="top">(3 years)</span>
+									</div>
+									<div class="times_list">
+										<ul>
+											<li><p><span>2007</span>-Studio Art Centers, Italy,</p></li>
+											<li><p><span>2011</span>-Royal College of Art, London</p></li>
+										</ul>
+									</div>
+								</div>
+								<div class="info_box_wrap mg20-0">
+									<div class="title">
+										<span class="main">SKILLS</span>
+									</div>
+									<div class="times_list" style="margin-top: 5px;">
+										<span class="cube">Python</span>
+										<span class="cube">CAE</span>
+										<span class="cube">CAD</span>			
+									</div>
+								</div>							
+								<div class="rightpart mg20-0">
+									<div class="info_box_wrap">
+										<div class="title">
+											<span class="main">LANGUAGES</span>
+										</div>
+										<div class="times_list">
+											<ul>
+												<li><p><span>Chinese</span> - Native or Bilingual Proficiency</p></li>
+												<li><p><span>English</span> - Full Professional Proficiency</p></li>
+												<li><p><span>Japanese</span> - Full Professional Proficiency</p></li>
+											</ul>
+										</div>
+									</div>
+								</div>
+								<div class="rightpart mg20-0">
+									<div class="info_box_wrap">
+										<div class="title">
+											<span class="main">INTERESTS</span>
+										</div>
+										<div class="times_list" style="margin-top: 5px;">
+											<span class="cube">Genetic Algorithm</span>
+											<span class="cube">Shogi</span>
+										</div>
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- NEWS登録モーダル開始 -->
+		<div th:include="newsModal :: modal"></div>
+		<!-- NEWS登録モーダル終了 -->	
+	</div>
+	<footer>
+		Copyright © Wei Dai All Rights Reserved.
+	</footer>
+</div>
+
+<!-- / WRAPPER ALL -->
+
+<!-- SCRIPTS -->
+<script src="/js/jquery.js"></script>
+<!--[if lt IE 10]> <script type="text/javascript" src="js/ie8.js"></script> <![endif]-->	
+<script src="/js/plugins.js"></script>
+<script src="/js/init.js"></script>
+<!-- /SCRIPTS -->
+
+</body>
+</html>

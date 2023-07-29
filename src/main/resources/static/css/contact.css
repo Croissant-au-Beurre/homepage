@@ -1,0 +1,9 @@
+.contact_container {
+  margin-top: 40px;
+}
+
+@media (max-width: 820px) {
+  .contact_container {
+    margin-top: 0;
+  }
+}

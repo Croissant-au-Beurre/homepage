@@ -1,0 +1,149 @@
+@use 'appear';
+
+body {
+    height: 100%;
+    margin: 0;
+    width: 100%;
+}
+.container {
+    background: linear-gradient(to bottom, #ffff00, #0dbce4 70%); 
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+.height-content {
+    height: fit-content;
+}  
+.text-align-center {   
+    text-align: center;
+}
+.flex {
+    display: flex;
+}
+.flex-direction-column {
+    flex-direction: column;
+}
+.justifycenter {
+    justify-content: center;
+}
+.myself_icon {
+    border: solid 1px #000;
+    border-radius: 50px;
+    height: 100px;
+    width: 100px;
+    margin: 0 auto;
+    object-fit: cover;
+}
+.myname {
+    font-family: 'Dancing Script', cursive;
+    font-size: 30px;
+}
+.title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    font-style: normal;
+}
+.research {
+    font-family: 'Poppins', sans-serif;
+    font-size: 25px;
+    font-style: italic;
+}
+ul {
+    list-style-type: none;
+  }
+a {
+    text-decoration: none;
+  }
+.btn {
+    border: solid #0589a7 2px;
+    border-radius: 10px; 
+    color: #0589a7; 
+    font-weight: 500;       
+}
+.btn:hover {
+    cursor: pointer;
+    background-color: #0589a7;
+    color: beige;
+}
+.link_icons {
+    height: 30px;
+    margin: 0 10px;
+}
+.link_icons:hover {
+    cursor: pointer;
+}
+.back {
+    background-color: #f0f0f0;
+}
+.beige {
+    background-color: beige;
+}
+.line {
+    display: block;
+    margin: 0 auto;
+    width: 20%;
+    border: solid #037791 1px;
+}
+.description {
+    width: 90%;
+}
+.date {
+    font-size: 20px;
+}
+/* space */
+.h35 {
+    height: 35px;
+}
+.mg-0-5 {
+    margin: 0 5px;
+}
+.mg-20percent-auto {
+    margin: 20% auto;
+}
+.pd5 {
+    padding: 5px;
+}
+.pd5_3 {
+    padding: 5.3px;
+}
+.pd10 {
+    padding: 10px;
+}
+.mt5 {
+    margin-top: 5px;
+}
+.mr10 {
+    margin-right: 10px;
+}
+.mb10 {
+    margin-bottom: 10px;
+}
+.mb20 {
+    margin-bottom: 20px;
+}
+.ml5 {
+    margin-left: 5px;
+}
+.ml10 {
+    margin-left: 10px;
+}
+.br5 {
+    border-radius: 5px;
+    border: #0589a7;
+}
+/* font */
+.font-size18 {
+    font-size: 18px;
+}
+
+@media (max-width: 820px) {
+    ul {
+        flex-direction: column;
+        padding: 0;
+    }
+    li {
+        margin: 10px auto;
+    }
+} 

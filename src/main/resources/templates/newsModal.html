@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org"
+xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<body>
+	<div th:fragment="modal" xmlns:th="http://www.thymeleaf.org">
+		<form method="post" th:action="@{/insertNews}" th:object="${form}" class="overCntBox spW100" id="newsForm">
+			<input type="hidden" th:field="${form.seq}">
+			<div class="homepage_modal" id="modalNewsInsert" aria-labelledby="ModalLabel" aria-hidden="true">
+				<div class="input-container">
+					<div class="closeBtn overBgClose mb10" id="NewsInsertClose"><i class="fas fa-times"></i></div>
+					<div class="mb10">
+						<span class="mb10">日期</span>
+						<input class="mb10 insDate" type="date" th:field="${form.insDate}">
+						<textarea class="mb10 news" rows="5" cols="15" th:field="${form.news}"></textarea>
+						<span class="mb10">url</span><input class="mb10 url" th:field="${form.url}">
+					</div>
+					<div class="btnCenter mb10">
+						<button type="button" class="saveBtn btn" name="save" value="保存">保存</button>
+						<button type="button" class="btn overBgClose"><i class="fas fa-times-circle"></i> 閉じる</button>	
+						<button type="button" class="deleteBtn btn" name="delete" value="删除">删除</button>			
+					</div>
+				</div>
+			</div>
+		</form>
+		<form method="post" th:action="@{/deleteNews}" th:object="${form}" id="deleteNewsForm">
+			<input type="hidden" class="deleteSeq" th:field="${form.seq}">
+		</form>
+	</div>
+</body>
+</html>
+
