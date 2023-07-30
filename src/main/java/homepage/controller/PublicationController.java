@@ -32,6 +32,19 @@ public class PublicationController {
 			isAdmin = true;
 		}
 		model.addAttribute("isAdmin", isAdmin);
+		int fromDetailFlg = 0;
+		if(session.getAttribute("fromDetailFlg") != null) {
+			try {
+			    fromDetailFlg = Integer.parseInt(session.getAttribute("fromDetailFlg").toString());
+			} catch (NumberFormatException e) {
+			    // 或者给一个默认值
+			    fromDetailFlg = 0;
+			}
+		}
+		
+		if(fromDetailFlg != 0) {
+			model.addAttribute("fromDetailFlg", fromDetailFlg);
+		}
 		
 		List<PublicationEntity> publicationList = publicationService.selectAllPublications();
 		model.addAttribute("publicationList", publicationList);
@@ -56,7 +69,9 @@ public class PublicationController {
 		} else {
 			publication.setSeq(form.getSeq());
 			publicationService.updatePublication(publication);
-		}		
+		}
+		HttpSession session = request.getSession();
+		session.setAttribute("fromDetailFlg", form.getSeq());
         return "redirect:/publication";
     }
 	

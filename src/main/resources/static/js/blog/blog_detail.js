@@ -95,8 +95,6 @@ $(function() {
     });
 	//戻るボタン
 	$("#btnBack").click(function() {
-		console.log('clicked');
-		console.log(seq);
 		var seq = $("#seq").val();
 		localStorage.setItem("seq", seq);
 		window.location.href = "/blog?fromDetailPage=true"; 
