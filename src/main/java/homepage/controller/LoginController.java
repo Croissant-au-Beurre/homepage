@@ -32,6 +32,7 @@ public class LoginController {
 	@RequestMapping("/login")
     public String login(Model model, LoginForm form) {
 		
+		
 		model.addAttribute("form", form); // 添加表单对象到模型中
 		return "/login";
 		
@@ -49,10 +50,11 @@ public class LoginController {
 		        System.out.println(verificationCode);
 		        return "/verify"; // 验证成功，重定向到验证码页面
 			} else {
-				return "/login";
+				// 验证失败，显示提示框
+			    return "redirect:/login?error"; // 重定向到登录页面，并在URL中加入错误参数
 			}
 		} else {
-			return "/login";
+			return "redirect:/login?blank";
 		}
 		
 	}

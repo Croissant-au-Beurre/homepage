@@ -2,6 +2,8 @@ package homepage.controller;
 
 import java.io.File;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -128,6 +130,7 @@ public class BlogController {
 		return "redirect:/blog";
 	}
 	
+	/*上传图片*/
 	@RequestMapping("/upload")
     public String handleFileUpload(@RequestParam("file") MultipartFile file, HttpServletRequest request) {
         // 指定文件夹的路径
@@ -142,9 +145,20 @@ public class BlogController {
         
         try {
             // 保存上传的文件到指定文件夹
-            file.transferTo(new File(folderPath + "/" + file.getOriginalFilename()));
+        	// 获取当前日期和时间
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd_HHmmss");
+            String timestamp = sdf.format(new Date());
+            
+            // 获取原始文件名
+            String originalFileName = file.getOriginalFilename();
+
+            // 构建新的文件名：日期时分秒 + 原始文件名
+            String newFileName = timestamp + "_" + originalFileName;
+
+            // 创建目标文件对象
+            file.transferTo(new File(folderPath + "/" + newFileName));
             HttpSession session = request.getSession();
-            String imgPath = (folderPath2 + "/" + file.getOriginalFilename()).toString();
+            String imgPath = (folderPath2 + "/" + newFileName).toString();
             session.setAttribute("imgPath", imgPath);
             return "/blog";
         } catch (IOException e) {

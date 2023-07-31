@@ -37,11 +37,11 @@ public class PublicationController {
 			try {
 			    fromDetailFlg = Integer.parseInt(session.getAttribute("fromDetailFlg").toString());
 			} catch (NumberFormatException e) {
-			    // 或者给一个默认值
+			    // 默认值
 			    fromDetailFlg = 0;
 			}
 		}
-		
+		session.removeAttribute("fromDetailFlg");
 		if(fromDetailFlg != 0) {
 			model.addAttribute("fromDetailFlg", fromDetailFlg);
 		}
